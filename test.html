@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/css/dm.modal.css">
+    <link rel="stylesheet" href="/dm.loadingbar/styles/css/dm.loadingBar.css">
+</head>
+<body>
+    <div style="overflow:hidden">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>
+        
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>   
+    </div>
+    
+    <!--<button data-dm-modal="true" 
+            data-dm-modal-content-id="InlineContent2"
+            data-dm-modal-content-url="http://localhost:1701/dm.modal/templates/testContent.html"
+            data-dm-modal-content-preload="true"
+            data-dm-modal-closeonescape="true"
+            data-dm-modal-closeonoverlay="true">Open Modal</button>-->
+    
+    <div id="InlineContent" style="display:none">
+        <h1>Inline Content</h1>
+    </div>
+    
+    <div id="InlineContent2" style="display:none">
+        <h1>Inline Content2</h1>        
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/dm.core/scripts/dist/dm.core.js"></script>    
+    <script src="scripts/dist/dm.modal.js"></script>
+    <script src="/dm.loadingbar/scripts/dist/dm.loadingBar.js"></script>
+        
+    <script>
+        dm.bind({
+            basePath: 'http://localhost:1701/dm.modal/'
+        });   
+        
+        var modal = dm.modal.create({
+            content: {
+                url: dm.config.basePath + "/templates/testContent.html",
+                preload: true
+            }
+        });   
+        
+        var modal2 = dm.modal.create({
+           content: $('#InlineContent').html(),
+           closeOnOverlay: false,
+           closeOnEscape: false
+        });
+        
+    </script>
+</body>
+</html>
